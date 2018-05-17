@@ -2,11 +2,8 @@ FLAGS=-Wall -g -c
 
 all: SAP1ADA
 
-SAP1ADA: main.o ADA.o
-		 g++ -std=c++11 ADA.o main.o -o SAP1ADA.exe
-
-ADA.o: 	ADA.cpp
-		g++ $(FLAGS) ADA.cpp ADA.h
+SAP1ADA: main.o
+		 g++ -std=c++11 main.o -o SAP1ADA.exe
 
 main.o: main.cpp
 		g++ $(FLAGS) main.cpp
