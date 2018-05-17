@@ -4,17 +4,16 @@
 #include <vector>
 
 template <typename T1, typename T2>
-class ADA {
-    public:
-
+class ADA
+{
+  public:
     // Constructor
-    ADA(std::vector< std::pair<T1, T2>> data);
+    ADA(std::vector<std::pair<T1, T2>> data);
 
     // Destructor
     ~ADA();
 
-
-    private:
+  private:
     std::unordered_map<std::string, std::string> assembler;
     std::unordered_map<std::string, std::string> disassembler;
 };
