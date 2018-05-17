@@ -25,19 +25,23 @@ class ADA
     {
         std::ostringstream os;
         std::ifstream iFile;
-        iFile.open(inputFile);
         std::string command;
         int num;
+
+        iFile.open(inputFile);
+
         while (iFile >> command)
         {
             // Check if the command is even valid (it exists in our map)
-            if(assembler.find(command) == assembler.end()){
+            if (assembler.find(command) == assembler.end())
+            {
                 throw new ItemNotFound("Invalid instruction: " + command);
             }
-            
+
             os << assembler.at(command);
 
-            if(isBinary(command)){
+            if (isBinary(command))
+            {
                 iFile >> num;
                 os << " ";
                 os << std::bitset<4>(num).to_string();
@@ -45,6 +49,11 @@ class ADA
             os << std::endl;
         }
         return os.str();
+    }
+
+    std::string disassemble(std::string inputFile)
+    {
+        return "";
     }
 
     // Destructor
